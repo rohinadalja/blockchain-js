@@ -5,9 +5,9 @@ const BlockChain = require('../../models/blockchain');
 
 let testBlockChain = new BlockChain();
 before(() => {
-  testBlockChain.addBlock({sender: "Bruce wayne", reciver: "Tony stark", amount: 100});
-  testBlockChain.addBlock({sender: "Harrison wells", reciver: "Han solo", amount: 50});
-  testBlockChain.addBlock({sender: "Tony stark", reciver: "Ned stark", amount: 75});
+  testBlockChain.addBlock({sender: "Government", receiver: "Mike", amount: 2000});
+  testBlockChain.addBlock({sender: "Mike", receiver: "Rohin", amount: 1500});
+  testBlockChain.addBlock({sender: "Rohin", receiver: "Aastha", amount: 50});
   // console.dir({ debug: testBlockChain }, { depth: null });
   // console.log("[ PASS ] ******** Validity of this blockchain: ", testBlockChain.isBlockChainValid());
 });
@@ -28,9 +28,9 @@ describe('BlockChain', () => {
 
   describe('isBlockChainValid() invalid', () => {
     before(() => {
-      expect(testBlockChain.chain[0].transaction['reciver']).to.equal("Tony stark");
-      testBlockChain.chain[0].transaction['reciver']= "Joker";
-      expect(testBlockChain.chain[0].transaction['reciver']).to.equal("Joker");
+      expect(testBlockChain.chain[0].transaction['receiver']).to.equal("Mike");
+      testBlockChain.chain[0].transaction['receiver']= "Jaideep";
+      expect(testBlockChain.chain[0].transaction['receiver']).to.equal("Jaideep");
     })
     it('should verify blockchain as invalid!', () => {
       expect(testBlockChain.isBlockChainValid()).to.equal(false);

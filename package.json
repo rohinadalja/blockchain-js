@@ -4,6 +4,7 @@
   "description": "Implementing blockchain using node.js for fun",
   "main": "app.js",
   "scripts": {
+    "test": "./node_modules/.bin/mocha ./test/*"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,12 @@
     "url": "https://github.com/rohinadalja/blockchain-js/issues"
   },
   "homepage": "https://github.com/rohinadalja/blockchain-js#readme",
-  "dependencies": {},
+  "dependencies": {
+    "crypto": "^1.0.1"
+  },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.0",
     "prettier": "^1.19.1"
   }
 }

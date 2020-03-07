@@ -12,7 +12,7 @@ class BlockChain {
       this.chain.push(block);
   }
 
-  chainIsValid(){
+  isBlockChainValid(){
           for(var i=0;i<this.chain.length;i++){
               if(this.chain[i].hash !== this.chain[i].getHashVal())
                   return false;

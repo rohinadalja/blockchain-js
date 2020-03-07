@@ -3,37 +3,37 @@ const expect = chai.expect;
 
 const BlockChain = require('../../models/blockchain');
 
-let BChain = new BlockChain();
+let testBlockChain = new BlockChain();
 before(() => {
-  BChain.addBlock({sender: "Bruce wayne", reciver: "Tony stark", amount: 100});
-  BChain.addBlock({sender: "Harrison wells", reciver: "Han solo", amount: 50});
-  BChain.addBlock({sender: "Tony stark", reciver: "Ned stark", amount: 75});
-  // console.dir({ debug: BChain }, { depth: null });
-  // console.log("[ PASS ] ******** Validity of this blockchain: ", BChain.chainIsValid());
+  testBlockChain.addBlock({sender: "Bruce wayne", reciver: "Tony stark", amount: 100});
+  testBlockChain.addBlock({sender: "Harrison wells", reciver: "Han solo", amount: 50});
+  testBlockChain.addBlock({sender: "Tony stark", reciver: "Ned stark", amount: 75});
+  // console.dir({ debug: testBlockChain }, { depth: null });
+  // console.log("[ PASS ] ******** Validity of this blockchain: ", testBlockChain.isBlockChainValid());
 });
 
 describe('BlockChain', () => {
   describe('addBlock()', () => {
     it('should add 3 blocks to blockchain', () => {
-      // console.log( { debug: BChain.chain });
-      expect(BChain.chain).to.be.an('array');
-      expect(BChain.chain).to.have.a.lengthOf(3);
+      // console.log( { debug: testBlockChain.chain });
+      expect(testBlockChain.chain).to.be.an('array');
+      expect(testBlockChain.chain).to.have.a.lengthOf(3);
     })
   });
-  describe('chainIsValid() valid', () => {
+  describe('isBlockChainValid() valid', () => {
     it('should verify blockchain as valid!', () => {
-      expect(BChain.chainIsValid()).to.equal(true);
+      expect(testBlockChain.isBlockChainValid()).to.equal(true);
     })
   });
 
-  describe('chainIsValid() invalid', () => {
+  describe('isBlockChainValid() invalid', () => {
     before(() => {
-      expect(BChain.chain[0].transaction['reciver']).to.equal("Tony stark");
-      BChain.chain[0].transaction['reciver']= "Joker";
-      expect(BChain.chain[0].transaction['reciver']).to.equal("Joker");
+      expect(testBlockChain.chain[0].transaction['reciver']).to.equal("Tony stark");
+      testBlockChain.chain[0].transaction['reciver']= "Joker";
+      expect(testBlockChain.chain[0].transaction['reciver']).to.equal("Joker");
     })
     it('should verify blockchain as invalid!', () => {
-      expect(BChain.chainIsValid()).to.equal(false);
+      expect(testBlockChain.isBlockChainValid()).to.equal(false);
     })
   });
 });

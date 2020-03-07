@@ -1,0 +1,27 @@
+{
+  "name": "blockchain-js",
+  "version": "0.1.0",
+  "description": "Implementing blockchain using node.js for fun",
+  "main": "app.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohinadalja/blockchain-js.git"
+  },
+  "keywords": [
+    "blockchain",
+    "sequence",
+    "rohin"
+  ],
+  "author": "Rohin Adalja",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rohinadalja/blockchain-js/issues"
+  },
+  "homepage": "https://github.com/rohinadalja/blockchain-js#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
+}

@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha ./test/*"
+    "test": "mocha ./tests/*"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/rohinadalja/blockchain-js#readme",
   "dependencies": {
-    "crypto": "^1.0.1"
+    "crypto": "^1.0.1",
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",

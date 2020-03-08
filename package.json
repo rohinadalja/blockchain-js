@@ -4,7 +4,8 @@
   "description": "Implementing blockchain using node.js for fun",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./test/*"
+    "start": "node app.js",
+    "test": "mocha ./test/*"
   },
   "repository": {
     "type": "git",
